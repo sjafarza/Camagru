@@ -1,0 +1,16 @@
+
+#users{
+
+    background: rgb(193, 207, 207);
+    text-align: center;
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+} 
+
+#users .input{
+    padding: 5px;
+    width: 288px;
+    margin: 5px 0;
+}
