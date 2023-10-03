@@ -4,7 +4,10 @@
     background: rgb(193, 207, 207);
     text-align: center;
     width: 400px;
+    
     margin: auto;
+    margin-top: 300px;
+    /* margin-top: auto; */
     padding: 10px;
     border-radius: 5px;
 } 

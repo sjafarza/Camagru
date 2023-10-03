@@ -1,20 +1,25 @@
 <?php
 
     // require_once('db.php');
-    $host = "10.0.2.15";
+    $servarname = "camagru";
     $username = "camagru_db_user";
     $psw = "123";
     $dbname = "camagru";
-    // $db = mysquli_connect($host, $username, $psw, $dbname);
-    // if($db){
-    //     echo"ok";
-    // }else{
-    //     echo"No";
-    // }
+    $db = mysqli_connect($servarname, $username, $psw, $dbname);
+    if($db){
+        echo"ok";
+    }else{
+        echo"No";
+    }
 
-    echo'Hello  ';
-    echo $_POST['userName'];
-    echo"  from do-register.ph\n";
+    // echo'Hello  ';
+    // echo $_POST['userName'];
+    // echo"  from do-register.ph\n";
+    
+
+    print_r($_POST);
+    
+    //register in DB
 
     $userName = $_POST['userName'];
     $email = $_POST['email'];
