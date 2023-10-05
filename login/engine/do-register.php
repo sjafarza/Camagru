@@ -1,40 +1,41 @@
 <?php
 
-    // require_once('db.php');
-    $servarname = "camagru";
-    $username = "camagru_db_user";
-    $psw = "123";
-    $dbname = "camagru";
-    $db = mysqli_connect($servarname, $username, $psw, $dbname);
-    if($db){
-        echo"ok";
-    }else{
-        echo"No";
-    }
+    //1 connection to DB
+    require_once('db.php');
 
-    // echo'Hello  ';
-    // echo $_POST['userName'];
-    // echo"  from do-register.ph\n";
-    
-
-    print_r($_POST);
-    
-    //register in DB
+   
+    //2 register in DB
 
     $userName = $_POST['userName'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $password = $_POST['password-conf'];
-
-    echo $userName . "+" . $email . "+" . $password;
+    $passwordConf = $_POST['password-conf'];
+    // Error ==> $query = "INSERT INTO 'users'('name','email','psw') VALUES('$userName', '$email', '$password')";
+    $query = "INSERT INTO users(name,email,psw) VALUES('$userName', '$email', '$password')";
     
-    // $register = mysqli_query($db,"INSERT INTO users  VALUES ('$userName','$email','$password')");
-    // if($register){
-    //     echo"Done !";
-    // }   
-    // else{
-    //     echo"Error";
-    // }
+    if($password != $passwordConf)
+    {
+        echo"Error: Confirmation is not ok.";
+    }
+    else{
+
+        $register = mysqli_query($con,$query);
+        if($register){
+            echo"Done ! - register data in DB from doRegister";
+            
+            header(string:'location:www/camagru/index.html');
+            // header('location:http://www.camagru.com');
+            // exit;
+           
+        }   
+        else{
+            echo"Error: register in DB .";
+        };
+
+    }
+    
+    
+    
         
 
 ?>
