@@ -32,7 +32,7 @@
                 $register = mysqli_query($con,$query);
                 if($register){
                     echo"Done ! - register data in DB from doRegister</br></br>";
-                    echo '<a class="btn" href="../../index.html"> ok </a>';
+                    echo '<a class="btn" href="../../frontend/index.html"> ok </a>';
                     // header(string:'location:www/camagru/index.html');
                     // header('location:http://www.camagru.com');
                     // exit;
